@@ -90,7 +90,9 @@ while opcao != "0":
     print("[5] - Gráfico do estoque")
     print("[6] - Inventário por prateleira")
     print("[7] - Relatório do dia")
-    print("[10] - ")
+    print("[10] - Buscar produto por código ")
+    print("[11] - Atualizar dados do produto ")
+    print("[12] - Relatório geral de estoque ")
     print("[0] - Sair")
     opcao = input("Escolha uma opção: ")
 
