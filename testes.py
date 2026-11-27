@@ -41,4 +41,11 @@ print("Fim!")
 for linha in range(1, 3):
     for coluna in range(1, 4):
         print("Linha", linha, "Coluna", coluna)
+
+
+produto =  {
+    "codigo": 101
+    "nome" : "Teclado"
+    ""
+}
         
