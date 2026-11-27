@@ -44,8 +44,18 @@ for linha in range(1, 3):
 
 
 produto =  {
-    "codigo": 101
-    "nome" : "Teclado"
-    ""
+    "codigo": 101,
+    "nome" : "Teclado",
+    "quantidade": 15,
+    "preco":89.90
 }
-        
+
+print(produto["nome"])
+produto["preco"] = 99.90
+print(produto)
+
+produtos=[]
+produtos.append(produto)
+produtos.append({"codigo": 102, "nome": "Mouse", "quantidade": 20, "preco": 45.50})
+
+print(len(produtos))
