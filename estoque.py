@@ -209,6 +209,60 @@ while opcao != "0":
             print("Média por venda: R$", round(media, 1), "unidades")
             print("----------------------------------")
 
+    elif opcao == "10":
+        codigo = int(input("Digite o código para busca: "))
+        encontrado = None
+        for produto in produtos:
+            if produto["codigo"] == codigo:
+                encontrado = produto
+                break
+        if encontrado:
+            print("Produto encontrado:")
+            print("Código:", encontrado["codigo"])
+            print("Nome:", encontrado["nome"])
+            print("Quantidade:", encontrado["quantidade"])
+            print("Preço: R$", encontrado["preco"])
+        else:
+            print("Produto não encontrado.")
+            
+    elif opcao == "11":
+        codigo = int(input("Digite o código do produto para atualização: "))
+        encontrado = None
+        for produto in produtos:
+            if produto["codigo"] == codigo:
+                encontrado = produto
+                break
+        if encontrado:
+            print("O que você deseja atualizar?")
+            print("[1] Nome")
+            print("[2] Quantidade")
+            sub_opcao = input("Escolha uma opção: ")
+            if sub_opcao == "1":
+                encontrado["nome"] = input("Digite o novo nome: ")
+                print("Nome atualizado com sucesso!")
+            elif sub_opcao == "2":
+                nova_qtd = int(input("Digite a nova quantidade: "))
+                if nova_qtd < 0:
+                    print("Quantidade não pode ser negativa!")
+                else:
+                    encontrado["quantidade"] = nova_qtd
+                    print("Quantidade atualizada com sucesso!")
+        else:
+            print("Produto não encontrado.")
+            
+    elif opcao == "12":
+        total_estoque = 0
+        print("====== RELATÓRIO GERAL ======")
+        for produto in produtos:
+            subtotal = produto["quantidade"] * produto["preco"]
+            total_estoque += subtotal
+            print(f"{produto['codigo']} - {produto['nome']}")
+            print(f"Quantidade: {produto['quantidade']}")
+            print(f"Preço unitário: R$ {produto['preco']:.2f}")
+            print(f"Subtotal: R$ {subtotal:.2f}")
+            print("-" * 20)
+        print(f"Total do estoque: R$ {total_estoque:.2f}")
+
 
     elif opcao == "0":
         print("Encerrando o TechStock... Até logo!")
