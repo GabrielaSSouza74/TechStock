@@ -54,8 +54,10 @@ print(produto["nome"])
 produto["preco"] = 99.90
 print(produto)
 
-produtos=[]
+produtos = []
 produtos.append(produto)
 produtos.append({"codigo": 102, "nome": "Mouse", "quantidade": 20, "preco": 45.50})
 
 print(len(produtos))
+print(produtos[1]["nome"])
+
